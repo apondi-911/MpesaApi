@@ -13,6 +13,7 @@ def mpesa_callback(request):
     # ...
     return HttpResponse("Callback received.")
 
+
 def index(request):
     if request.method == 'POST':
         form = PaymentForm(request.POST)
@@ -30,8 +31,6 @@ def index(request):
         form = PaymentForm()
 
     return render(request, 'payment.html', {'form': form})
-
-
 
 # def index(request):
 #     client = MpesaClient()
